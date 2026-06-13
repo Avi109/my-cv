@@ -1,0 +1,611 @@
+/* ==========================================================================
+   1. Reset and Global Typography Variables
+   ========================================================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+    background-color: #030712; /* Rich Obsidian Base */
+}
+
+body { 
+    background-color: #030712; 
+    color: #f1f5f9; /* Clean text contrast */
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; 
+    line-height: 1.6; 
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. Modern Glass Navigation
+   ========================================================================== */
+nav { 
+    position: sticky; 
+    top: 0; 
+    background: rgba(3, 7, 18, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1.25rem 10%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
+}
+
+.nav-links a { 
+    color: #94a3b8; 
+    text-decoration: none; 
+    margin-left: 30px; 
+    font-size: 0.85rem; 
+    font-weight: 500;
+    transition: color 0.25s ease; 
+}
+
+.nav-links a:hover { 
+    color: #06b6d4; /* Vibrant Cyan Accent */
+}
+
+/* ==========================================================================
+   3. Refined Hero Layout
+   ========================================================================== */
+.hero-section { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 80px; 
+    padding: 120px 10%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.hero-content { 
+    flex: 1; 
+}
+
+.hero-sidebar { 
+    flex: 0 0 250px; 
+    text-align: center; 
+}
+
+.subtitle { 
+    color: #06b6d4; 
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; 
+    letter-spacing: 1px; 
+    font-size: 0.8rem; 
+}
+
+h1 { 
+    font-size: 3.8rem; 
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin: 15px 0; 
+    color: #fff; 
+    line-height: 1.05; 
+}
+
+.tagline { 
+    font-size: 1.35rem; 
+    font-weight: 500;
+    color: #e2e8f0; 
+    margin-bottom: 24px; 
+    line-height: 1.4;
+}
+
+.bio { 
+    color: #94a3b8; 
+    margin-bottom: 35px; 
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   4. Profile Avatar Canvas Component
+   ========================================================================== */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-pic { 
+    width: 240px; 
+    height: 240px; 
+    border-radius: 50%; /* Modern Circular Framing */
+    object-fit: cover; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.upload-form { 
+    margin-top: 24px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    align-items: center;
+}
+
+.upload-label { 
+    cursor: pointer; 
+    color: #06b6d4; 
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; 
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.upload-label:hover { opacity: 0.8; }
+#file-input { display: none; }
+
+.btn-save-photo {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-save-photo:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* ==========================================================================
+   5. Clean Modular Sections & General System Layout
+   ========================================================================== */
+section { 
+    max-width: 900px; 
+    margin: 0 auto 80px; 
+    padding: 60px 45px; 
+    background: #0b0f19; /* High contrast Dark Slate Card Container */
+    border-radius: 16px; 
+    border: 1px solid rgba(255, 255, 255, 0.04); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h2 { 
+    color: #fff; 
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 35px; 
+    border-left: 3px solid #06b6d4; 
+    padding-left: 16px; 
+    letter-spacing: -0.5px;
+}
+
+.card { 
+    padding: 24px; 
+    background: #111827; /* Stratified deeper nest */
+    margin: 16px 0; 
+    border-radius: 12px; 
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-header h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Minimalist technical lists styling */
+.clean-list {
+    margin-top: 14px;
+    list-style: none;
+}
+
+.clean-list li {
+    color: #94a3b8;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 18px;
+}
+
+.clean-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #06b6d4;
+}
+
+.date-location {
+    color: #06b6d4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   6. Capabilities Grid
+   ========================================================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.skills-card {
+    padding: 25px;
+    background: #111827;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.skills-card h3 {
+    color: #fff;
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.03);
+    color: #cbd5e1;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.25s ease;
+}
+
+.tag:hover {
+    border-color: #06b6d4;
+    color: #fff;
+    background: rgba(6, 182, 212, 0.06);
+}
+
+/* ==========================================================================
+   7. Communications & Language Cards
+   ========================================================================== */
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.language-card {
+    padding: 24px;
+    background: #111827;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.lang-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.lang-header h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.flag { font-size: 1.3rem; }
+
+.lang-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    display: inline-block;
+}
+
+.lang-badge.native { background: rgba(16, 185, 129, 0.08); color: #34d399; }
+.lang-badge.proficiency { background: rgba(6, 182, 212, 0.08); color: #22d3ee; }
+.lang-badge.fluent { background: rgba(245, 158, 11, 0.08); color: #fbbf24; }
+
+.lang-desc {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   8. Selected Work
+   ========================================================================== */
+.section-intro {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card {
+    padding: 30px;
+    background: #111827;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+    border-color: rgba(6, 182, 212, 0.3);
+    transform: translateY(-2px);
+}
+
+.project-meta {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.proj-category {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #06b6d4;
+    background: rgba(6, 182, 212, 0.05);
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.project-card h3 { margin-bottom: 12px; }
+
+.project-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.project-link:hover { color: #06b6d4; }
+.project-link .arrow { color: #06b6d4; margin-left: 6px; }
+
+.project-desc {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 18px;
+}
+
+.metric-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.metric-badge.accent { background: rgba(52, 211, 153, 0.06); color: #34d399; }
+.metric-badge.shadow { background: rgba(56, 189, 248, 0.06); color: #38bdf8; }
+
+/* ==========================================================================
+   9. Next-Gen Forms & Contact Structure Panels
+   ========================================================================== */
+.contact-section {
+    max-width: 1200px;
+    background: transparent;
+    border: none;
+    padding: 60px 0;
+    box-shadow: none;
+}
+
+.contact-grid {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.contact-left { flex: 1 1 400px; }
+
+.contact-left h2 {
+    font-size: 2.8rem;
+    border-left: none;
+    padding-left: 0;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+}
+
+.contact-lead {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+
+.meta-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.meta-info-item {
+    display: flex;
+    gap: 20px;
+}
+
+.meta-icon { font-size: 1.1rem; color: #475569; }
+
+.meta-label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #475569;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.meta-link, .meta-val {
+    color: #e2e8f0;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+a.meta-link:hover { color: #06b6d4; }
+
+/* Form component frame container */
+.contact-right {
+    flex: 1.2 1 500px;
+    background: #0b0f19;
+    padding: 45px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.clean-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-row-twin { display: flex; gap: 20px; }
+.form-row-twin .field-block { flex: 1; }
+
+.field-block { display: flex; flex-direction: column; gap: 8px; }
+
+.field-block label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #cbd5e1;
+}
+
+.field-block input,
+.field-block textarea {
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 14px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.field-block input::placeholder,
+.field-block textarea::placeholder {
+    color: #4b5563;
+}
+
+.field-block input:focus,
+.field-block textarea:focus {
+    outline: none;
+    border-color: #06b6d4;
+    box-shadow: 0 0 0 1px #06b6d4;
+}
+
+.form-submit-btn {
+    align-self: flex-start;
+    background: #fff;
+    color: #030712;
+    padding: 14px 28px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.form-submit-btn:hover { background: #e2e8f0; }
+
+/* ==========================================================================
+   10. Global Workspace Footer Workspace Styling (SVG Logos Config)
+   ========================================================================== */
+.global-footer {
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.copyright { font-size: 0.85rem; color: #475569; }
+
+.footer-social-icons { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center;
+}
+
+.social-icon-link {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon-link:hover { 
+    color: #06b6d4; /* Active cyan logo focus tint */
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   11. Primary CTA Buttons 
+   ========================================================================== */
+.btn-primary { 
+    background: #06b6d4; 
+    color: #030712; 
+    padding: 12px 24px; 
+    text-decoration: none; 
+    border-radius: 8px; 
+    display: inline-block; 
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.25s ease; 
+}
+
+.btn-primary:hover { background-color: #0891b2; }
+
+.btn-secondary { 
+    color: #fff; 
+    margin-left: 24px; 
+    text-decoration: none; 
+    border-bottom: 1px solid #fff; 
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.25s ease; 
+}
+
+.btn-secondary:hover {
+    color: #06b6d4;
+    border-bottom-color: #06b6d4;
+}
