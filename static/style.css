@@ -114,15 +114,18 @@ h1 {
    ========================================================================== */
 .avatar-container {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-pic { 
     width: 240px; 
     height: 240px; 
     border-radius: 50%; /* Modern Circular Framing */
-    object-fit: cover; 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
+    object-fit: cover; /* Prevents image stretching */
+    object-position: center; /* Centers the focus */
+    border: 2px solid rgba(6, 182, 212, 0.4); 
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
